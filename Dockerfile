@@ -1,18 +1,15 @@
-# Gunakan image Node resmi
 FROM node:18-alpine
 
-# Set direktori kerja
 WORKDIR /app
 
-# Salin semua file ke container
-COPY . .
+COPY package.json package-lock.json ./
 
-# Install dependencies
 RUN npm install
 
-# Build project
+COPY . .
+
 RUN npm run build
 
-# Jalankan production server
 EXPOSE 3000
+
 CMD ["npm", "start"]
