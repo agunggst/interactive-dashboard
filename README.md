@@ -7,10 +7,12 @@ Ini adalah hasil pengerjaan Frontend Skill Test berupa **dashboard interaktif** 
 ## ▶️ Cara Menjalankan Project
 
 ### **Via Local Development**
+
+Pastikan sudah melakukan instalasi **Node.js** terlebih dahulu
 ```bash
 # 1. Clone repo
-git clone https://github.com/username/interactive-dashboard-agung.git
-cd interactive-dashboard-agung
+git clone https://github.com/agunggst/interactive-dashboard.git
+cd interactive-dashboard
 
 # 2. Install dependencies
 npm install
@@ -39,16 +41,16 @@ docker compose up
 ## Halaman yang Sudah Selesai
 | Halaman         | Status | Fitur                                                      |
 | --------------- | ------ | ---------------------------------------------------------- |
-| `/` (Dashboard) | ✅      | Summary Cards, Chart Visualisasi, Navigasi                 |
-| `/produk`       | ✅      | Search produk (debounce), Sort harga & rating, Pagination  |
-| `/recipes`      | ✅      | Total resep, filter by tag & meal, visualisasi by tag/meal |
-| `/carts`        | ✅      | Detail transaksi: ID, item, harga, diskon                  |
+| `/` (Dashboard) | ✅      | Summary cards, chart visualisasi, navigasi                 |
+| `/produk`       | ✅      | Search produk (debounce), search, sort harga & rating, pagination  |
+| `/recipes`      | ✅      | Total resep, view data recipes by tag & meal, data tags |
+| `/carts`        | ✅      | Detail transaksi: ID, total produk, harga, diskon, harga diskon                  |
 
 ---
 
 ## Teknologi Tambahan yang Digunakan
 
-* **lucide-react**: Icon library untuk UI modern
+* **lucide-react**: Icon library
 * **lodash.debounce**: Untuk optimasi input pencarian (debounced search)
 
 ---
