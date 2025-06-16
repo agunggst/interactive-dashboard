@@ -1,7 +1,7 @@
 "use client"
 
 import axios from "axios"
-import SummaryCard from "./components/card"
+import Card from "./components/card"
 import { useEffect, useState } from "react"
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
@@ -18,10 +18,10 @@ const Dashboard = () => {
   const [carts, setCarts] = useState<string[][]>([])
   const [posts, setPosts] = useState<string[][]>([])
 
-  const [totalProduct, setTotalProduct] = useState(0)
-  const [totalRecipe, setTotalRecipe] = useState(0)
-  const [totalCarts, setTotalCarts] = useState(0)
-  const [totalPosts, setTotalPosts] = useState(0)
+  const [totalProduct, setTotalProduct] = useState<number>(0)
+  const [totalRecipe, setTotalRecipe] = useState<number>(0)
+  const [totalCarts, setTotalCarts] = useState<number>(0)
+  const [totalPosts, setTotalPosts] = useState<number>(0)
 
   const dataCards = [
     {
@@ -157,16 +157,16 @@ const Dashboard = () => {
         {
           dataCards.map((item, id) => {
             return (
-              <SummaryCard key={id}>
+              <Card key={id}>
                 <h2 className="text-2xl font-semibold">{item.number}</h2>
                 <p className="text-gray-700">{item.cardText}</p>
-              </SummaryCard>
+              </Card>
             )
           })
         }
       </div>
       <div className="grid grid-cols-1 mt-4 md:grid-cols-2 gap-4">
-        <SummaryCard>
+        <Card>
           <h2 className="text-lg font-semibold mb-2">Products by Category</h2>
           <Chart 
             options={plotProductByCategoryOptions} 
@@ -174,8 +174,8 @@ const Dashboard = () => {
             type="bar" 
             height={350}
           />
-        </SummaryCard>
-        <SummaryCard>
+        </Card>
+        <Card>
           <h2 className="text-lg font-semibold mb-2">Recipes by Tags</h2>
           <Chart 
             options={plotRecipeByTagOptions} 
@@ -183,26 +183,26 @@ const Dashboard = () => {
             type="donut" 
             height={300}
           />
-        </SummaryCard>
+        </Card>
       </div>
       <div className="grid grid-cols-1 mt-4 md:grid-cols-2 gap-4">
         <Link href="/carts" className="cursor-pointer">
-          <SummaryCard>
+          <Card>
             <h2 className="text-lg font-semibold mb-2">Transactions</h2>
             <CustomTable 
               columnNames={['ID Cart', 'Total Products', 'Discount', 'Total After Discount']} 
               columnData={carts.slice(0, 5)}
             />
-          </SummaryCard>
+          </Card>
         </Link>
         <Link href="/posts" className="cursor-pointer">
-          <SummaryCard>
+          <Card>
             <h2 className="text-lg font-semibold mb-2">Posts</h2>
             <CustomTable 
               columnNames={[]} 
               columnData={posts.slice(0, 6)}
             />
-          </SummaryCard>
+          </Card>
         </Link>
       </div>
     </>

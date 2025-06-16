@@ -67,7 +67,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
         <button
           onClick={toggleSidebar}
           type="button" 
-          className="inline-flex items-center p-2 mt-2 ms-3 text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex bg-white shadow-md items-center p-2 mt-2 ms-3 text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           <Menu className="w-6 h-6"/>
         </button>

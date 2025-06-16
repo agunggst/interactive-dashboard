@@ -2,7 +2,7 @@ interface Props {
   children: React.ReactNode
 }
 
-const SummaryCard: React.FC<Props> = ({ children }) => {
+const Card: React.FC<Props> = ({ children }) => {
   return (
     <>
       <div className="bg-white shadow-md rounded-lg p-4 m-2">
@@ -12,4 +12,4 @@ const SummaryCard: React.FC<Props> = ({ children }) => {
   )
 }
 
-export default SummaryCard
+export default Card
