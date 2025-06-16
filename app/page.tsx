@@ -9,6 +9,7 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 import { Product, Recipe } from './interfaces'
 import CustomTable from "./components/customTable"
 import Link from "next/link"
+import RecipesByTags from "./components/charts/recipesByTags"
 
 const Dashboard = () => {
   const [topCategories, setTopCategories] = useState<{ category: string; count: number }[]>([{category:'', count:0}])
@@ -118,7 +119,9 @@ const Dashboard = () => {
         posts.push([ String(item.title) ])
       })
       setPosts(posts)
-      setIsLoading(false)
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 300)
     } catch (error) {
       console.log(error, 'at fetchPosts page.tsx')
     }
@@ -131,17 +134,6 @@ const Dashboard = () => {
     xaxis: {
       categories: topCategories.map(item => item.category)
     }
-  }
-
-  const plotRecipeByTagOptions = {
-    plotOptions: {
-      pie: {
-        donut: {
-          size: "50%"
-        }
-      }
-    },
-    labels: labelTopRecipeTags
   }
 
   if (isLoading) {
@@ -177,11 +169,9 @@ const Dashboard = () => {
         </Card>
         <Card>
           <h2 className="text-lg font-semibold mb-2">Recipes by Tags</h2>
-          <Chart 
-            options={plotRecipeByTagOptions} 
-            series={categorizedRecipe.map(item => item.count)} 
-            type="donut" 
-            height={300}
+          <RecipesByTags 
+            lables={labelTopRecipeTags}
+            series={categorizedRecipe.map(item => item.count)}
           />
         </Card>
       </div>

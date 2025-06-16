@@ -101,7 +101,7 @@ const Sidebar: React.FC<Props> = ({ children }) => {
           </ul>
         </div>
       </aside>
-      <div className="p-4 min-h-[100vh] pt-12 sm:ml-64 sm:pt-4">
+      <div className="p-4 min-h-[100vh] pt-14 sm:ml-64 sm:pt-4">
         {children}
       </div>
     </>
