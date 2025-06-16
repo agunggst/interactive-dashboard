@@ -188,7 +188,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 mt-4 md:grid-cols-2 gap-4">
         <Link href="/carts" className="cursor-pointer">
           <Card>
-            <h2 className="text-lg font-semibold mb-2">Transactions</h2>
+            <h2 className="text-lg font-semibold mb-2">Carts</h2>
             <CustomTable 
               columnNames={['ID Cart', 'Total Products', 'Discount', 'Total After Discount']} 
               columnData={carts.slice(0, 5)}

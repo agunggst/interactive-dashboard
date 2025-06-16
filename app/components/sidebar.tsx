@@ -30,11 +30,11 @@ const Sidebar: React.FC<Props> = ({ children }) => {
       textMenu: 'Carts',
       route: '/carts'
     },
-    {
-      icon: <StickyNote className="w-5"/>,
-      textMenu: 'Posts',
-      route: '/posts'
-    }
+    // {
+    //   icon: <StickyNote className="w-5"/>,
+    //   textMenu: 'Posts',
+    //   route: '/posts'
+    // }
   ]
   const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false)
   const sidebarRef = useRef<HTMLDivElement>(null)

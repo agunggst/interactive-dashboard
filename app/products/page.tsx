@@ -11,7 +11,7 @@ import CustomSelect from "../components/customSelect"
 
 const Products= () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [products, setProducts] = useState<Product[]>([])
+  // const [products, setProducts] = useState<Product[]>([])
   const [totalProduct, setTotalProduct] = useState<number>(0)
   const columnNames = ['Product ID', 'Title', 'Category', 'Price', 'Discount', 'Rating', 'Stock', 'SKU', 'Availability Status']
   const [columnData, setColumnData] = useState<string[][]>([[]])
@@ -41,7 +41,7 @@ const Products= () => {
       if (isChangingPage) {
         setIsChangingPage(false)
       }
-      setProducts(response.data.products)
+      // setProducts(response.data.products)
       setTotalProduct(response.data.total)
       setupColumnData(response.data.products)
       setIsLoading(false)
@@ -124,10 +124,6 @@ const Products= () => {
               </>
             )
           }
-          {/* <CustomTable columnData={columnData} columnNames={columnNames}/>
-          <div className="mt-8 flex justify-center">
-            <CustomPagination prevPage={handlePrevPage} nextPage={handleNextPage} />
-          </div> */}
         </Card>
       </div>
     </>

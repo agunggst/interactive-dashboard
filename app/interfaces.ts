@@ -45,11 +45,13 @@ export interface Recipe {
 }
 
 export interface Cart {
-  id: number,
-  totalProducts: number,
-  total: number,
-  discountedTotal: number,
-  discountPercentage: number
+  id: number;
+  products: Product[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
 }
 
 export interface Post {
