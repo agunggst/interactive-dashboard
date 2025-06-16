@@ -1,11 +1,9 @@
-import { useState } from "react"
 interface Props {
   columnNames: string[]
   columnData: string[][]
 }
 
 const CustomTable: React.FC<Props> = ({ columnNames, columnData }) => {
-  const [isPaginationOff, setIfPaginationOff] = useState<boolean>(false)
 
   return (
     <>
