@@ -4,7 +4,7 @@ Ini adalah hasil pengerjaan Frontend Skill Test berupa **dashboard interaktif** 
 
 ---
 
-## ▶️ Cara Menjalankan Project
+## Cara Menjalankan Project
 
 ### **Via Local Development**
 
